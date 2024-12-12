@@ -1,4 +1,4 @@
-import { Greetings } from "./Greetings";
+import { AgeCounter } from "./AgeCounter";
 
 export function App() {
   return (
@@ -17,7 +17,7 @@ export function App() {
     //   </Greetings>
     // </div>
     <div>
-      <input
+      {/* <input
         type="checkbox"
         checked
         onChange={function () {
@@ -35,7 +35,9 @@ export function App() {
         }}
       >
         <img src="https://picsum/200/300" />
-      </Greetings>
+      </Greetings> */}
+
+      <AgeCounter />
     </div>
   );
 }
