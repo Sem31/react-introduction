@@ -1,3 +1,9 @@
 export function Car(props) {
-    return <p className="box box2">I am the {"<Car/>"}</p>;
-  }
+  const onClick = () => {
+    props.onCarClick(2);
+  };
+  // return <p onClick={onClick}>I am the {"<Car/>"}</p>;
+  return <p onClick={() => {
+    props.onCarClick(2);
+  }}>I am the {"<Car/>"}</p>;
+}
