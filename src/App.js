@@ -1,57 +1,22 @@
-// import { AgeCounter } from "./AgeCounter";
+import { useState } from "react";
+import { DisplayDifficulty } from "./Components/DisplayDifficulty/DisplayDifficulty";
+import { MenuList } from "./Components/MenuList/MenuList";
+import s from "./style.module.css";
 
-// export function App() {
-//   return (
-//     // <div>
-//     //   <h1>Welcome to the React world</h1>
-//     //   <Greetings
-//     //     firstName={"Rachel"}
-//     //     lastName={"Green"}
-//     //     age={30}
-//     //     car={{ brand: "Viper", color: "red", speed: 200 }}
-//     //     doSomething={function () {
-//     //       console.log("BBLABAEALZKELAZKE");
-//     //     }}
-//     //   >
-//     //     <img src="https://picsum.photos/200/300" />
-//     //   </Greetings>
-//     // </div>
-//     <div>
-//       {/* <input
-//         type="checkbox"
-//         checked
-//         onChange={function () {
-//           console.log("You clicked");
-//         }}
-//       />
-//       <h1>Welcome to the React world</h1>
-//       <Greetings
-//         firstName="Rachel"
-//         lastName={"Green"}
-//         age={101}
-//         car={{ brand: "Viper", color: "red", speed: 200 }}
-//         doSomething={function () {
-//           console.log("GLAHEA GLAEAZ");
-//         }}
-//       >
-//         <img src="https://picsum/200/300" />
-//       </Greetings> */}
-
-//       <AgeCounter />
-//     </div>
-//   );
-// }
-
-import "./global.css";
-import { Car } from "./Components/Car/Car";
 export function App() {
-  function hello(value) {
-    alert("Hello from <App/>" + value);
-  }
+  const [currentItem, setCurrentItem] = useState("");
+
+  const HandleCurrentItem = (value) => {
+    setCurrentItem(value);
+  };
+
   return (
     <div>
-      <p>I am the {"<App/>"}</p>
-      <Car onCarClick={hello} />
+      <p className={s.p}>Choose Your React Course difficulty</p>
+      <div className={s.workspace}>
+        <MenuList difficulty={currentItem} onItemSelect={HandleCurrentItem} />
+        <DisplayDifficulty difficulty={currentItem} />
+      </div>
     </div>
   );
 }
